@@ -212,3 +212,13 @@ SELECT monto, COUNT(monto) FROM bitcoins GROUP BY monto HAVING monto < 0.5;
 -- Subconsulta
 
 SELECT * FROM ventas WHERE monto > (SELECT AVG(monto) FROM ventas);
+
+-- ACTIVIDAD 7
+
+--  Listar todas las transacciones de la tabla bitcoin que sean mayores a el monto promedio de las transacciones
+
+SELECT * FROM bitcoins WHERE monto >(SELECT AVG(monto) FROM bitcoins);
+
+--  Listar todas las transacciones de la tabla bitcoin que sean mayores a el monto de la primera transacción en la tabla
+
+SELECT * FROM bitcoins WHERE monto >(SELECT monto FROM bitcoins LIMIT 1);
