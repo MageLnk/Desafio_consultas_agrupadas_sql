@@ -140,3 +140,41 @@ SELECT categoria, COUNT(categoria) FROM ventas GROUP BY categoria;
 SELECT categoria, SUM(monto) FROM ventas GROUP BY categoria;
 
 -- ACTIVIDAD 4
+
+--  Seleccionar el monto total de bitcoins de cada usuario
+
+SELECT monto FROM bitcoins;
+
+--  Seleccionar la cantidad de transacciones de cada categoría
+
+SELECT categoria, COUNT(categoria) FROM ventas GROUP BY categoria;
+
+-- Calcular el promedio de venta de cada categoría
+
+SELECT categoria, AVG(monto) FROM ventas GROUP BY categoria;
+
+-- Seleccionar el mínimo vendido de cada categoría
+
+SELECT categoria, MIN(monto) FROM ventas GROUP BY categoria;
+
+-- Seleccionar el máximo vendido de cada categoría
+
+SELECT categoria, MAX(monto) FROM ventas GROUP BY categoria;
+
+--  Seleccionar la cantidad total de depósitos recibidos por cada usuario
+
+SELECT email, COUNT(monto) from bitcoins GROUP BY email;
+
+-- Seleccionar el monto total de bitcoins de cada usuario
+
+SELECT email, SUM(monto) from bitcoins GROUP BY email;
+
+--  Seleccionar el menor depósito recibido por cada usuario
+
+SELECT email, MIN(monto) from bitcoins GROUP BY email;
+
+-- Seleccionar el mayor depósito recibido por cada usuario
+
+SELECT email, MAX(monto) from bitcoins GROUP BY email;
+
+-- Actividad 5
