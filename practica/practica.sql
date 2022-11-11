@@ -193,10 +193,22 @@ SELECT categoria, COUNT(categoria) FROM ventas GROUP BY categoria HAVING SUM(mon
 
 --  Listar todos los correos de los usuarios que hayan recibido un solo depósito
 
-SELECT email, COUNT(monto) from bitcoins GROUP BY email HAVING COUNT(monto) = 1;
+SELECT email, COUNT(monto) FROM bitcoins GROUP BY email HAVING COUNT(monto) = 1;
 
 --  Listar todos los correos de los usuarios que hayan recibido un total de depósitos mayor a 1.5 bitcoins.
 
-SELECT email, COUNT(monto) from bitcoins GROUP BY email HAVING SUM(monto) >= 1.5;
+SELECT email, COUNT(monto) FROM bitcoins GROUP BY email HAVING SUM(monto) >= 1.5;
 
 -- ACTIVIDAD 6
+
+--  Listar todas las transacciones de la tabla bitcoin que sean mayores o iguales a 0.9btc.
+
+SELECT monto, COUNT(monto) FROM bitcoins GROUP BY monto HAVING monto >= 0.9;
+
+-- Listar todas las transacciones de la tabla bitcoin exceptuando aquellos que de monto superior a 0.5 bitcoins
+
+SELECT monto, COUNT(monto) FROM bitcoins GROUP BY monto HAVING monto < 0.5;
+
+-- Subconsulta
+
+SELECT * FROM ventas WHERE monto > (SELECT AVG(monto) FROM ventas);
