@@ -91,3 +91,52 @@ SELECT COUNT(DISTINCT(email)) FROM bitcoins;
 -- Selecionar el TOTAL de montos únicos
 
 SELECT COUNT(DISTINCT(monto)) FROM bitcoins;
+
+-- ACTIVIDAD 3
+
+-- Crear tabla
+
+CREATE TABLE ventas(categoria VARCHAR(50), monto INT);
+
+-- Check tabla
+
+SELECT * FROM ventas;
+
+-- Insertar datos
+
+INSERT INTO ventas (categoria, monto) VALUES ('Books', 214);
+INSERT INTO ventas (categoria, monto) VALUES ('Games', 293);
+INSERT INTO ventas (categoria, monto) VALUES ('Baby', 241);
+INSERT INTO ventas (categoria, monto) VALUES ('Tools', 719);
+INSERT INTO ventas (categoria, monto) VALUES ('Tools', 385);
+INSERT INTO ventas (categoria, monto) VALUES ('Movies', 882);
+INSERT INTO ventas (categoria, monto) VALUES ('Outdoors', 654);
+INSERT INTO ventas (categoria, monto) VALUES ('Baby', 332);
+INSERT INTO ventas (categoria, monto) VALUES ('Grocery', 332);
+INSERT INTO ventas (categoria, monto) VALUES ('Toys', 952);
+INSERT INTO ventas (categoria, monto) VALUES ('Games', 682);
+INSERT INTO ventas (categoria, monto) VALUES ('Books', 527);
+INSERT INTO ventas (categoria, monto) VALUES ('Kids', 980);
+INSERT INTO ventas (categoria, monto) VALUES ('Grocery', 300);
+
+-- Check datos
+
+SELECT * FROM ventas;
+
+-- Ordenar categoría de VENTAS
+
+SELECT categoria FROM ventas GROUP BY categoria;
+
+-- Equivalente
+
+SELECT DISTINCT(categoria) FROM ventas;
+
+-- Pero al agrupar, podemos hacer cosas como esta la cual cuenta el total por categoría
+
+SELECT categoria, COUNT(categoria) FROM ventas GROUP BY categoria;
+
+-- O esta
+
+SELECT categoria, SUM(monto) FROM ventas GROUP BY categoria;
+
+-- ACTIVIDAD 4
