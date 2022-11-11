@@ -178,3 +178,25 @@ SELECT email, MIN(monto) from bitcoins GROUP BY email;
 SELECT email, MAX(monto) from bitcoins GROUP BY email;
 
 -- Actividad 5
+
+-- HAVING acá está filtrando, si hay 2 o más "ventas", los muestra
+
+SELECT categoria, COUNT(categoria) FROM ventas GROUP BY categoria HAVING COUNT(categoria) >= 2;
+
+-- HAVING acá está filtrando, si hay 3 o más productos
+
+SELECT categoria, SUM(monto) FROM ventas GROUP BY categoria HAVING COUNT(categoria) > 3;
+
+-- HAVING acá está mostrando las categorías en donde la suma sea mayor a 500
+
+SELECT categoria, COUNT(categoria) FROM ventas GROUP BY categoria HAVING SUM(monto) > 500;
+
+--  Listar todos los correos de los usuarios que hayan recibido un solo depósito
+
+SELECT email, COUNT(monto) from bitcoins GROUP BY email HAVING COUNT(monto) = 1;
+
+--  Listar todos los correos de los usuarios que hayan recibido un total de depósitos mayor a 1.5 bitcoins.
+
+SELECT email, COUNT(monto) from bitcoins GROUP BY email HAVING SUM(monto) >= 1.5;
+
+-- ACTIVIDAD 6
