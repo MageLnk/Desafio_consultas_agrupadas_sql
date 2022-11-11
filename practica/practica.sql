@@ -6,7 +6,7 @@ CREATE DATABASE practica;
 
 \c practica;
 
--- PRACTICA 1
+-- ACTIVIDAD 1
 
 -- Crear tabla
 
@@ -48,3 +48,38 @@ INSERT INTO bitcoins (email, bitcoinAdress, monto) VALUES ('jaime@email.com', '1
 INSERT INTO bitcoins (email, bitcoinAdress, monto) VALUES ('camila@email.com', '19iMdr6JK6HgarHsebHmMMVjdxnNbybG6L', 0.8);
 INSERT INTO bitcoins (email, bitcoinAdress, monto) VALUES ('jaime@email.com', '1EL98fxNT1LyS6C8ckFBqocTho9NsEQATS', 0.96);
 INSERT INTO bitcoins (email, bitcoinAdress, monto) VALUES ('camila@email.com', '1B8xZAcBbU3mTfb6bNJvGtLdPanyAK9kN6', 0.79);
+
+-- Checkeo TABLA
+
+SELECT * FROM bitcoins;
+
+-- Cuenta el total de filas en la tabla
+
+SELECT COUNT(*) FROM bitcoins;
+
+-- Sumar valores
+
+SELECT SUM(monto) FROM bitcoins;
+
+-- Promedio de valores
+
+SELECT AVG(monto) FROM bitcoins;
+
+-- Máximo
+
+SELECT MAX(monto) from bitcoins;
+
+-- Mínimo
+
+SELECT MIN(monto) from bitcoins;
+
+-- DISTINCT
+-- Selecionar LOS emails distitntos
+
+SELECT DISTINCT(email) FROM bitcoins;
+
+-- Selecionar el TOTAL de emails distintos
+
+SELECT COUNT(DISTINCT(email)) FROM bitcoins;
+
+-- ACTIVIDAD 2
