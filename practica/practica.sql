@@ -83,3 +83,11 @@ SELECT DISTINCT(email) FROM bitcoins;
 SELECT COUNT(DISTINCT(email)) FROM bitcoins;
 
 -- ACTIVIDAD 2
+
+-- Selecionar el TOTAL de emails distintos
+
+SELECT COUNT(DISTINCT(email)) FROM bitcoins;
+
+-- Selecionar el TOTAL de montos únicos
+
+SELECT COUNT(DISTINCT(monto)) FROM bitcoins;
